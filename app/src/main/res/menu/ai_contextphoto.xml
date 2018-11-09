@@ -3,9 +3,6 @@
     android:id="@+id/menu_gallery">
 
     <item
-        android:id="@+id/menu_chooseanoption"
-        android:title="@string/menu_chooseoption" />
-    <item
         android:id="@+id/menu_choosefromphotogallery"
         android:title="@string/menu_choosefromphotogallery"/>
     <item

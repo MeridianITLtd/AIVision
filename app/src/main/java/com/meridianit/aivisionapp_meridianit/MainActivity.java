@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.ContextMenu;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -122,13 +123,13 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
                                     ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         if(v.getId() == R.id.imageView) {
             MenuInflater inflater = getMenuInflater();
+            menu.setHeaderTitle(R.string.menu_chooseoption);
             inflater.inflate(R.menu.ai_contextphoto, menu);
         }
     }
@@ -139,4 +140,32 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.ai_menu,menu);
         return super.onCreateOptionsMenu(menu);
     }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.menu_choosefromphotogallery:
+                chooseGallery();
+                return true;
+            case R.id.menu_choosefromcamera:
+                chooseCamera();
+                return true;
+            default:
+                return super.onContextItemSelected(item);
+        }
+    }
+
+    private void chooseGallery(){
+        Intent photoIntent = new Intent(Intent.ACTION_PICK);
+        photoIntent.setType("image/*");
+        startActivityForResult(photoIntent, GALLERY);
+    }
+
+    private void chooseCamera(){
+        Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+        cameraUri = Uri.fromFile(getOutputMediaFile());
+        cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraUri);
+        startActivityForResult (cameraIntent,CAMERA);
+    }
+
 }
