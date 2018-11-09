@@ -71,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
         });
 
         registerForContextMenu((ImageView) findViewById(R.id.imageView));
+
+        //saved instance state containing check that camera was pressed.
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
     }
 
     @Override
@@ -99,6 +106,11 @@ public class MainActivity extends AppCompatActivity {
                 case CAMERA:
                     ImageView imageView = findViewById(R.id.imageView);
                     imageView.setImageURI(cameraUri);
+                    //set intent to show photo query activity
+                    Intent intent = new Intent(this,PhotoQueryActivity.class);
+                    intent.putExtra("imageURI",cameraUri.getPath());
+                    startActivity(intent);
+                    Log.i("INFO","Photo activity started!");
 
                     break;
             }

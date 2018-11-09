@@ -9,4 +9,6 @@
     <!--menu related -->
     <string name="mn_Settings">Settings</string>
     <string name="mn_About">About</string>
+    <string name="ui_imageprocessyes">Yes</string>
+    <string name="ui_imageprocessno">No</string>
 </resources>

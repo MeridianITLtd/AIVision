@@ -30,8 +30,9 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:scaleType="fitXY"
             tools:srcCompat="@tools:sample/backgrounds/scenic" />
 
     </LinearLayout>
