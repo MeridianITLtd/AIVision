@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        //listeners on the buttons
+/*        //listeners on the buttons
         Button btnGallery = findViewById(R.id.btnGallery);
         btnGallery.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
                 cameraIntent.putExtra(MediaStore.EXTRA_OUTPUT, cameraUri);
                 startActivityForResult (cameraIntent,CAMERA);
             }
-        });
+        });*/
 
         registerForContextMenu((ImageView) findViewById(R.id.imageView));
 

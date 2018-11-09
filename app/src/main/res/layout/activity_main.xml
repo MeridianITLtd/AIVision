@@ -10,22 +10,12 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/btnGallery"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_showGallery" />
-
-    <Button
-        android:id="@+id/btnCamera"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/ui_showCamera" />
 
     <LinearLayout
         android:id="@+id/framelayout"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
+        android:padding="10dp"
         android:layout_weight="0.8">
 
         <ImageView
@@ -33,7 +23,8 @@
             android:layout_width="400dp"
             android:layout_height="400dp"
             android:scaleType="fitXY"
-            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+            android:src="@drawable/androidportrait"
+            />
 
     </LinearLayout>
 
