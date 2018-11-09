@@ -4,4 +4,9 @@
     <!--ui related -->
     <string name="ui_showGallery">Show Gallery</string>
     <string name="ui_showCamera">Show Camera</string>
+    <string name="ui_submitAgain">Submit again!</string>
+
+    <!--menu related -->
+    <string name="mn_Settings">Settings</string>
+    <string name="mn_About">About</string>
 </resources>

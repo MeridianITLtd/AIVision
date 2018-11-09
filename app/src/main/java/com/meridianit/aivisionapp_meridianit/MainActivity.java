@@ -13,6 +13,8 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -65,6 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult (cameraIntent,CAMERA);
             }
         });
+
+        registerForContextMenu((ImageView) findViewById(R.id.imageView));
     }
 
     @Override
@@ -114,6 +118,20 @@ public class MainActivity extends AppCompatActivity {
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
         return new File(mediaStorageDir.getPath() + File.separator +
                 "IMG_"+ timeStamp + ".jpg");
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v,
+                                    ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        if(v.getId() == R.id.menu_options) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.ai_menu, menu);
+        }
+        else if(v.getId() == R.id.menu_gallery) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.ai_contextphoto, menu);
+        }
     }
 
 }
