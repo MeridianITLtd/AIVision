@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_chooseoption">Select one of the following options:</string>
+    <string name="menu_choosefromphotogallery">Choose from Photo Gallery</string>
+    <string name="menu_choosefromcamera">Choose from camera</string>
+</resources>
